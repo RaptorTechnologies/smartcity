@@ -42,7 +42,7 @@ yarn-error.log
 local.properties
 
 # File extensions
-*.mbtiles
+#*.mbtiles
 *.air
 *.ipa
 *.apk

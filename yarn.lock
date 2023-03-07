@@ -3174,6 +3174,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@openremote/cj_cluj_napoca@workspace:ui/app/cj_cluj_napoca":
+  version: 0.0.0-use.local
+  resolution: "@openremote/cj_cluj_napoca@workspace:ui/app/cj_cluj_napoca"
+  dependencies:
+    "@openremote/manager": "workspace:*"
+    "@openremote/util": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
 "@openremote/core@workspace:*, @openremote/core@workspace:openremote/ui/component/core":
   version: 0.0.0-use.local
   resolution: "@openremote/core@workspace:openremote/ui/component/core"
@@ -7504,9 +7513,9 @@ __metadata:
   linkType: hard
 
 "gridstack@npm:^6.0.2":
-  version: 6.0.2
-  resolution: "gridstack@npm:6.0.2"
-  checksum: 6ed7b323d549e7e7a4a09617994de61a8a22ec7949c1f3042eab274f4e931a0e9df49e9797bfc13cad1f7f6f06ed680137c1356c0b9e075f6bf05447b9a4eec9
+  version: 6.0.3
+  resolution: "gridstack@npm:6.0.3"
+  checksum: fb9335974cd410521bee1ea94f2c599eef3c5644346c6867757f5500b8e8d0ababd0880396d66637203f05cacbb4dd88db3cc134361b3a0f0dfbf3fa34486e65
   languageName: node
   linkType: hard
 

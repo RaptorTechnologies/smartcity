@@ -1,13 +1,104 @@
 {
-  "loadLocales": true,
-  "realms": {
-    "default": {
-      "appTitle": "Custom Project",
-      "styles": ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #0c4da2; --or-app-color5: #CCCCCC;}",
-      "logo": "/images/logo.png",
-      "logoMobile": "/images/logo-mobile.png",
-      "favicon": "/images/favicon.ico",
-      "language": "en"
+  "loadLocales" : true,
+  "realms" : {
+    "default" : {
+      "appTitle" : "OpenRemote Manager",
+      "language" : "en"
+    },
+    "master" : {
+      "appTitle" : "Master",
+      "styles" : ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #0c4da2; --or-app-color5: #CCCCCC;}",
+      "logo" : "/images/master/logo.png",
+      "logoMobile" : "/images/master/logo-mobile.png",
+      "favicon" : "/images/master/favicon.ico",
+      "language" : "en"
+    },
+    "rls" : {
+      "appTitle" : "RLS Cluj-Napoca",
+      "styles" : ":host > * {--or-app-color1:#ffffff;--or-app-color2:#ffffff;--or-app-color3:#303030;--or-app-color4:#142232;--or-app-color5:#CCCCCC;--or-app-color6:#be0000;--or-app-color8:#d4d4d4;",
+      "logo" : "/images/rls/logo.png",
+      "logoMobile" : "/images/rls/logo-mobile.png",
+      "favicon" : "/images/rls/favicon.ico",
+      "language" : "en"
+    }
+  },
+  "markers" : {
+    "LightControllerAsset" : {
+      "attributeName" : "status",
+      "showLabel" : true,
+      "showUnits" : true
+    }
+  },
+  "pages" : {
+    "assets" : {
+      "viewer" : {
+        "assetTypes" : {
+          "LightControllerAsset" : {
+            "viewerStyles" : { },
+            "panels" : [ {
+              "type" : "group",
+              "title" : "underlyingAssets"
+            }, {
+              "type" : "info",
+              "hideOnMobile" : true,
+              "properties" : {
+                "include" : [ ]
+              },
+              "attributes" : {
+                "include" : [ "notes" ]
+              }
+            }, {
+              "type" : "info",
+              "column" : 1,
+              "title" : "location",
+              "properties" : {
+                "include" : [ ]
+              },
+              "attributes" : {
+                "include" : [ "location" ],
+                "itemConfig" : {
+                  "location" : {
+                    "label" : ""
+                  }
+                }
+              }
+            }, {
+              "type" : "info",
+              "title" : "Status",
+              "properties" : {
+                "include" : [ ]
+              },
+              "attributes" : {
+                "include" : [ "state", "analogValue", "sunriseTime", "sunsetTime" ]
+              }
+            }, {
+              "type" : "info",
+              "title" : "Settings",
+              "properties" : {
+                "include" : [ ]
+              },
+              "attributes" : {
+                "include" : [ "mode", "analogUpdate", "analogThreshold", "sunriseOffset", "sunsetOffset" ]
+              }
+            }, {
+              "type" : "info",
+              "title" : "Controller Information",
+              "properties" : {
+                "include" : [ ]
+              },
+              "attributes" : {
+                "include" : [ "imei", "macAddress", "ipAddress", "serialNr", "osVersion", "appVersion" ]
+              }
+            }, {
+              "type" : "history",
+              "column" : 1
+            }, {
+              "type" : "linkedUsers",
+              "column" : 1
+            } ]
+          }
+        }
+      }
     }
   }
 }

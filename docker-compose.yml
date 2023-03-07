@@ -19,7 +19,7 @@
 #  DEPLOYMENT_VERSION=$(git rev-parse --short HEAD)
 #  MANAGER_VERSION=$(cd openremote; git rev-parse --short HEAD; cd ..)
 #  docker build -t openremote/manager:$MANAGER_VERSION ./openremote/manager/build/install/manager/
-#  docker build -t openremote/custom-deployment:$DEPLOYMENT_VERSION ./deployment/build/
+#  docker build -t openremote/deployment:$DEPLOYMENT_VERSION ./deployment/build/
 #  docker-compose -p custom down
 #  docker volume rm custom_deployment-data
 #  Do the following volume rm command if you want a clean install (wipe all existing data)
@@ -36,14 +36,14 @@ volumes:
   postgresql-data:
   temp-data:
 
-x-logging: &awslogs
-  logging:
-    driver: awslogs
-    options:
-      awslogs-region: ${AWS_REGION:-eu-west-1}
-      awslogs-group: ${OR_HOSTNAME}
-      awslogs-create-group: 'true'
-      tag: "{{.Name}}/{{.ID}}"
+#x-logging: &awslogs
+#  logging:
+#    driver: awslogs
+#    options:
+#      awslogs-region: ${AWS_REGION:-eu-west-1}
+#      awslogs-group: ${OR_HOSTNAME}
+#      awslogs-create-group: 'true'
+#      tag: "{{.Name}}/{{.ID}}"
 
 services:
 
@@ -72,8 +72,8 @@ services:
       DOMAINNAME: ${OR_HOSTNAME?OR_HOSTNAME must be set}
       DOMAINNAMES: ${OR_ADDITIONAL_HOSTNAMES:-}
       # USE A CUSTOM PROXY CONFIG - COPY FROM https://github.com/openremote/proxy/blob/main/haproxy.cfg
-      #HAPROXY_CONFIG: '/data/proxy/haproxy.cfg'
-    <<: *awslogs
+      HAPROXY_CONFIG: '/data/proxy/haproxy.cfg'
+#    <<: *awslogs
 
   postgresql:
     image: openremote/postgresql:${POSTGRESQL_VERSION:-latest}
@@ -81,7 +81,7 @@ services:
     volumes:
       - postgresql-data:/var/lib/postgresql/data
       - temp-data:/tmp
-    <<: *awslogs
+#    <<: *awslogs
 
   keycloak:
     image: openremote/keycloak:${KEYCLOAK_VERSION:-latest}
@@ -95,7 +95,10 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: ${OR_ADMIN_PASSWORD:?OR_ADMIN_PASSWORD must be set}
       KC_HOSTNAME: ${OR_HOSTNAME:-localhost}
       KC_HOSTNAME_PORT: ${OR_SSL_PORT:--1}
-    <<: *awslogs
+      KC_DEFAULT_THEME: rls
+      KC_ACCOUNT_THEME: rls
+      TZ: Europe/Bucharest
+#    <<: *awslogs
 
   manager:
     image: openremote/manager:${MANAGER_VERSION:-latest}
@@ -128,5 +131,5 @@ services:
       OR_ADDITIONAL_HOSTNAMES: ${OR_ADDITIONAL_HOSTNAMES:-}
       OR_SSL_PORT: ${OR_SSL_PORT:--1}
       OR_DEV_MODE: ${OR_DEV_MODE:-false}
-      #OR_MAP_TILES_PATH: '/deployment.local/efs/mapdata.mbtiles'
-    <<: *awslogs
+      OR_MAP_TILES_PATH: '/deployment/map/mapdata.mbtiles'
+#    <<: *awslogs
