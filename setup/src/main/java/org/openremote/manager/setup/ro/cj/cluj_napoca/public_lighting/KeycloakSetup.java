@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.openremote.manager.setup.cj_cluj_napoca;
+package org.openremote.manager.setup.ro.cj.cluj_napoca.public_lighting;
 
 import org.openremote.manager.setup.AbstractKeycloakSetup;
 import org.openremote.model.Container;
@@ -46,11 +46,12 @@ public class KeycloakSetup extends AbstractKeycloakSetup {
     @Override
     public void onStart() throws Exception {
         // Create custom realm
-        Realm customRealm = createRealm("cj_cluj_napoca", "Smart City Cluj-Napoca", true);
+        Realm customRealm = createRealm("public_lighting", "Public Lighting", true);
 
         // Create user(s) for custom realm
-        createUser("cj_cluj_napoca", "demo", demoUserPassword, "demo", "demo", null, true, new ClientRole[] {
-            ClientRole.READ,
+        createUser("public_lighting", "demo", demoUserPassword, "demo", "demo", null, true, new ClientRole[] {
+                ClientRole.READ,
+                ClientRole.WRITE,
         });
     }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@openremote/cj_cluj_napoca",
+  "name": "@openremote/ro_cj_cluj_napoca",
   "version": "1.0.0",
-  "description": "Smart City Platform",
+  "description": "SmartCity Platform",
   "author": "Raptor Technologies",
   "license": "AGPL-3.0-or-later",
   "private": true,

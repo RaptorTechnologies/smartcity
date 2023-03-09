@@ -3174,15 +3174,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openremote/cj_cluj_napoca@workspace:ui/app/cj_cluj_napoca":
-  version: 0.0.0-use.local
-  resolution: "@openremote/cj_cluj_napoca@workspace:ui/app/cj_cluj_napoca"
-  dependencies:
-    "@openremote/manager": "workspace:*"
-    "@openremote/util": "workspace:*"
-  languageName: unknown
-  linkType: soft
-
 "@openremote/core@workspace:*, @openremote/core@workspace:openremote/ui/component/core":
   version: 0.0.0-use.local
   resolution: "@openremote/core@workspace:openremote/ui/component/core"
@@ -3476,6 +3467,7 @@ __metadata:
   resolution: "@openremote/or-components@workspace:openremote/ui/component/or-components"
   dependencies:
     "@material/elevation": ^9.0.0
+    "@openremote/core": "workspace:*"
     "@openremote/util": "workspace:*"
     lit: ^2.0.2
     simplebar: ^5.3.6
@@ -3490,7 +3482,7 @@ __metadata:
     "@openremote/model": "workspace:*"
     "@openremote/rest": "workspace:*"
     "@openremote/util": "workspace:*"
-    gridstack: ^6.0.2
+    gridstack: ^7.2.0
     lit: ^2.0.2
   languageName: unknown
   linkType: soft
@@ -3549,6 +3541,7 @@ __metadata:
   resolution: "@openremote/or-json-forms@workspace:openremote/ui/component/or-json-forms"
   dependencies:
     "@jsonforms/core": ^3.0.0-beta.1
+    "@openremote/or-components": ^1.1.0
     "@openremote/or-mwc-components": ^1.1.0
     "@openremote/util": "workspace:*"
     "@polymer/polymer": ^3.3.1
@@ -3728,6 +3721,15 @@ __metadata:
     "@types/qs": ^6.9.7
     axios: 0.24.0
     qs: ^6.8.0
+  languageName: unknown
+  linkType: soft
+
+"@openremote/ro_cj_cluj_napoca@workspace:ui/app/ro_cj_cluj_napoca":
+  version: 0.0.0-use.local
+  resolution: "@openremote/ro_cj_cluj_napoca@workspace:ui/app/ro_cj_cluj_napoca"
+  dependencies:
+    "@openremote/manager": "workspace:*"
+    "@openremote/util": "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -7512,10 +7514,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gridstack@npm:^6.0.2":
-  version: 6.0.3
-  resolution: "gridstack@npm:6.0.3"
-  checksum: fb9335974cd410521bee1ea94f2c599eef3c5644346c6867757f5500b8e8d0ababd0880396d66637203f05cacbb4dd88db3cc134361b3a0f0dfbf3fa34486e65
+"gridstack@npm:^7.2.0":
+  version: 7.2.3
+  resolution: "gridstack@npm:7.2.3"
+  checksum: 8fe41825671ef66cf644e7a824a209d16c60494c432b363db9a7df5317afd32c2263a86aa959f2a62b65b3e6366b2a3150b79e1153309e79f07c0bf611deb7c5
   languageName: node
   linkType: hard
 

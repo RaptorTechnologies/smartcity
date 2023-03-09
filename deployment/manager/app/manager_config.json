@@ -6,19 +6,19 @@
       "language" : "en"
     },
     "master" : {
-      "appTitle" : "Master",
-      "styles" : ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #0c4da2; --or-app-color5: #CCCCCC;}",
+      "appTitle" : "SmartCity Manager",
+      "styles" : ":host > * {",
       "logo" : "/images/master/logo.png",
       "logoMobile" : "/images/master/logo-mobile.png",
       "favicon" : "/images/master/favicon.ico",
       "language" : "en"
     },
-    "rls" : {
-      "appTitle" : "RLS Cluj-Napoca",
-      "styles" : ":host > * {--or-app-color1:#ffffff;--or-app-color2:#ffffff;--or-app-color3:#303030;--or-app-color4:#142232;--or-app-color5:#CCCCCC;--or-app-color6:#be0000;--or-app-color8:#d4d4d4;",
-      "logo" : "/images/rls/logo.png",
-      "logoMobile" : "/images/rls/logo-mobile.png",
-      "favicon" : "/images/rls/favicon.ico",
+    "public_lighting" : {
+      "appTitle" : "Sistemul de Iluminat Public Cluj-Napoca",
+      "styles" : ":host > * {--or-app-color1:#ffffff;--or-app-color2:#fafafa;--or-app-color3:#ffffff;--or-app-color4:#142132;--or-app-color5:#CCCCCC;--or-app-color6:#be0000;--or-app-color8:#d4d4d4;--or-rules-panel-color:#fafafa;--or-rules-header-background-color:#303030;--or-header-selected-color:#fafafa;--or-asset-tree-text-color:#000000;--or-asset-tree-selected-background-color:#ffffff;--or-header-image:linear-gradient(#121313, #142232);",
+      "logo" : "/images/ro_cj_cluj_napoca/logo.png",
+      "logoMobile" : "/images/ro_cj_cluj_napoca/logo-mobile.png",
+      "favicon" : "/images/ro_cj_cluj_napoca/favicon.ico",
       "language" : "en"
     }
   },

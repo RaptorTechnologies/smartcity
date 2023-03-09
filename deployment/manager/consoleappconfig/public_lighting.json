@@ -1,0 +1,16 @@
+{
+    "realm": "Public Lighting",
+    "initialUrl": "https://rls.raptor-technologies.ro/console_loader/?realm=public_lighting&consoleProviders=geofence push storage",
+    "url": "https://rls.raptor-technologies.ro/ro_cj_cluj_napoca/?realm=public_lighting&consoleProviders=geofence push storage&consoleAutoEnable=true#!geofences",
+    "menuEnabled": false,
+    "menuPosition": "BOTTOM_RIGHT",
+    "menuImage": null,
+    "primaryColor": "#4D9D2A",
+    "secondaryColor": "#CFCFCF",
+    "links": [
+        {
+            "displayText": "Map",
+            "pageLink": "https://rls.raptor-technologies.ro/console_loader/?realm=public_lighting&consoleProviders=geofence push storage&consoleAutoEnable=true#!geofences"
+        }
+    ]
+}

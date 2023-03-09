@@ -1,0 +1,7 @@
+task installDist(type: Copy) {
+    dependsOn getYarnInstallTask()
+    resolveTask(":manager:installDist").dependsOn it
+    from projectDir
+    into "${resolveProject(':manager').projectDir}/src/web"
+    exclude "build.gradle"
+}
