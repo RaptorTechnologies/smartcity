@@ -21,6 +21,7 @@ export class CustomHeader extends OrHeader {
             :host {
                 --internal-or-header-image: var(--or-header-image, white);
                 --internal-or-header-color: var(--or-header-color, var(--or-app-color1, ${unsafeCSS(DefaultColor1)}));
+                --internal-or-header-icon-color: var(--or-header-icon-color, var(--or-header-text-color, var(--or-app-color3, inherit)));
                 --internal-or-header-selected-color: var(--or-header-selected-color, var(--or-app-color4, ${unsafeCSS(DefaultColor4)}));
                 --internal-or-header-text-color: var(--or-header-text-color, var(--or-app-color3, inherit));
                 --internal-or-header-height: var(--or-header-height, ${unsafeCSS(DefaultHeaderHeight)});
@@ -112,6 +113,7 @@ export class CustomHeader extends OrHeader {
                 margin-left: auto;
                 --or-icon-height: calc(var(--internal-or-header-item-size) - 8px);
                 --or-icon-width: calc(var(--internal-or-header-item-size) - 8px);
+                --or-icon-fill: var(--internal-or-header-icon-color);
             }
 
             #menu-btn-mobile #realm-picker > span{
@@ -129,6 +131,14 @@ export class CustomHeader extends OrHeader {
                 margin-left: auto;
                 padding-right: 10px;
                 display: none;
+            }
+
+            #desktop-right .menu-item  {
+                line-height: var(--internal-or-header-height);
+            }
+
+            #desktop-right or-icon {
+                color: var(--internal-or-header-icon-color);
             }
 
             .mobile-bottom-border {
@@ -152,13 +162,16 @@ export class CustomHeader extends OrHeader {
             }
             #desktop-left .menu-item or-icon {
                 margin-right: 10px;
+                color: var(--internal-or-header-icon-color);
             }
             #desktop-left .menu-item  {
                 display: none;
                 line-height: calc(var(--internal-or-header-height) - 4px);
+                color: var(--internal-or-header-icon-color);
             }
 
-            #desktop-right .menu-item  {
+            #desktop-left .menu-item[selected] {
+                display: inline-block;
                 line-height: var(--internal-or-header-height);
             }
 
@@ -171,11 +184,6 @@ export class CustomHeader extends OrHeader {
 
             #drawer .menu-item  or-icon {
                 margin: 0 10px;
-            }
-
-            #desktop-left .menu-item[selected] {
-                display: inline-block;
-                line-height: var(--internal-or-header-height);
             }
 
             or-mwc-menu {

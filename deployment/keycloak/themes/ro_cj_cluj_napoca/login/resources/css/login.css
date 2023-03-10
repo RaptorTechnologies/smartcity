@@ -1,5 +1,5 @@
 .login-pf body {
-    background: url("../img/cluj-background.png") no-repeat center center fixed;
+    background: url("../img/background.png") no-repeat center center fixed;
     background-size: cover;
     height: 100%;
 }
@@ -500,7 +500,9 @@ ul#kc-totp-supported-apps {
 @media (max-width: 767px) {
 
     .login-pf body {
-        background: white;
+        background: url("../img/background.png") no-repeat center center fixed;
+        background-size: cover;
+        height: 100%;
     }
 
     #kc-header {

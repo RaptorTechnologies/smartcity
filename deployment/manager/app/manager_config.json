@@ -15,7 +15,7 @@
     },
     "public_lighting" : {
       "appTitle" : "Sistemul de Iluminat Public Cluj-Napoca",
-      "styles" : ":host > * {--or-app-color1:#ffffff;--or-app-color2:#fafafa;--or-app-color3:#ffffff;--or-app-color4:#142132;--or-app-color5:#CCCCCC;--or-app-color6:#be0000;--or-app-color8:#d4d4d4;--or-rules-panel-color:#fafafa;--or-rules-header-background-color:#303030;--or-header-selected-color:#fafafa;--or-asset-tree-text-color:#000000;--or-asset-tree-selected-background-color:#ffffff;--or-header-image:linear-gradient(#121313, #142232);",
+      "styles" : ":host > * {--or-app-color1:#ffffff;--or-app-color2:#fafafa;--or-app-color3:#142132;--or-app-color4:#142132;--or-app-color5:#CCCCCC;--or-app-color6:#be0000;--or-app-color8:#d4d4d4;--or-rules-panel-color:#fafafa;--or-rules-header-background-color:#303030;--or-header-selected-color:#fafafa;--or-asset-tree-text-color:#000000;--or-asset-tree-selected-background-color:#ffffff;--or-header-image:linear-gradient(#121313, #142232);--or-asset-viewer-title-text-color:darkgrey;--or-icon-fill:#142232;--or-header-icon-color:#ffffff;",
       "logo" : "/images/ro_cj_cluj_napoca/logo.png",
       "logoMobile" : "/images/ro_cj_cluj_napoca/logo-mobile.png",
       "favicon" : "/images/ro_cj_cluj_napoca/favicon.ico",
