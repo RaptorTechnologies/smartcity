@@ -6,7 +6,7 @@ task clean {
 
 task installDist(type: Copy) {
     dependsOn npmBuild
-    resolveTask(":manager:installDist").dependsOn it
+    mustRunAfter(resolveTask(":manager:installDist"))
     from project.buildDir
     into "${project(':deployment').buildDir}/image/manager/app/${projectDir.name}"
 }

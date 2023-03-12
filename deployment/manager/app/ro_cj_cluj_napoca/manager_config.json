@@ -8,17 +8,17 @@
     "master" : {
       "appTitle" : "SmartCity Manager",
       "styles" : ":host > * {",
-      "logo" : "/ro_cluj_cluj_napoca/images/master/logo.png",
-      "logoMobile" : "/ro_cluj_cluj_napoca/images/master/logo-mobile.png",
-      "favicon" : "/ro_cluj_cluj_napoca/images/master/favicon.ico",
+      "logo" : "/images/master/logo.png",
+      "logoMobile" : "/images/master/logo-mobile.png",
+      "favicon" : "/images/master/favicon.ico",
       "language" : "en"
     },
     "public_lighting" : {
       "appTitle" : "Public Lighting System",
       "styles" : ":host > * {--or-app-color1:#ffffff;--or-app-color2:#fafafa;--or-app-color3:#142132;--or-app-color4:#142132;--or-app-color5:#CCCCCC;--or-app-color6:#be0000;--or-app-color8:#d4d4d4;--or-rules-panel-color:#fafafa;--or-rules-header-background-color:#303030;--or-header-selected-color:#fafafa;--or-asset-tree-text-color:#000000;--or-asset-tree-selected-background-color:#ffffff;--or-header-image:linear-gradient(#121313, #142232);--or-asset-viewer-title-text-color:darkgrey;--or-icon-fill:#142232;--or-header-icon-color:#ffffff;",
-      "logo" : "/ro_cluj_cluj_napoca/images/public_lighting/logo.png",
-      "logoMobile" : "/ro_cluj_cluj_napoca/images/public_lighting/logo-mobile.png",
-      "favicon" : "/ro_cluj_cluj_napoca/images/public_lighting/favicon.ico",
+      "logo" : "/images/public_lighting/logo.png",
+      "logoMobile" : "/images/public_lighting/logo-mobile.png",
+      "favicon" : "/images/public_lighting/favicon.ico",
       "language" : "en"
     }
   },
