@@ -109,7 +109,7 @@
   "cancel": "Anuleaza",
   "discard": "Renunta",
   "createdOn": "Creat in",
-  "createdOnWithDate": "Creat: {{-date, lll}}",
+  "createdOnWithDate": "Creat in: {{-date, lll}}",
   "updatedWithDate": "Actualizat: {{-date, lll}}",
   "accessPublicRead": "Citire publica",
   "type": "Tip",

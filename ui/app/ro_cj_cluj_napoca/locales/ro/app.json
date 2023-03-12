@@ -1,4 +1,6 @@
 {
-  "appTitle": "Sistemul de Iluminat Public Cluj-Napoca",
+  "appTitle": "Sistemul de Iluminat Public",
+  "Status": "Status",
   "Settings": "Setari",
+  "Controller Information": "Informatii Controller"
 }
