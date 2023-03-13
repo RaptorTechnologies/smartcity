@@ -112,8 +112,14 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
     public static final AttributeDescriptor<Boolean> UPDATE_ANALOG =
             new AttributeDescriptor<>("analogUpdate",
                     ValueType.BOOLEAN,
-                    new MetaItem<>(MetaItemType.LABEL, "Update Analog Value"))
+                    new MetaItem<>(MetaItemType.LABEL, "Update Analog Value"),
+                    new MetaItem<>(MetaItemType.BUTTON_ICON, "refresh"))
                     .withFormat(new ValueFormat().setAsMomentary(true));
+
+//    public static final AttributeDescriptor<String> ANALOG_PARENT =
+//            new AttributeDescriptor<>("analogParent",
+//                    ValueType.ASSET_ID,
+//                    new MetaItem<>(MetaItemType.LABEL, "Set Analog Parent"));
 
     public static final AttributeDescriptor<Double> ANALOG_VALUE =
             new AttributeDescriptor<>("analogValue",
