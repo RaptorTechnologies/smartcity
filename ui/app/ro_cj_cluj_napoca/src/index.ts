@@ -129,16 +129,16 @@ fetch(configURL).then(async (result) => {
         appConfig.manager.loadTranslations = ["app", "or"];
 
         if (!appConfig.manager.translationsLoadPath) {
-            appConfig.manager.translationsLoadPath = "/locales/{{lng}}/{{ns}}.json";
+            appConfig.manager.translationsLoadPath = "/ro_cj_cluj_napoca/locales/{{lng}}/{{ns}}.json";
         }
     }
 
-    // Add config prefix if defined (used in dev)
-    if (CONFIG_URL_PREFIX) {
-        if (appConfig.manager.translationsLoadPath) {
-            appConfig.manager.translationsLoadPath = CONFIG_URL_PREFIX + appConfig.manager.translationsLoadPath;
-        }
-    }
+//     // Add config prefix if defined (used in dev)
+//     if (CONFIG_URL_PREFIX) {
+//         if (appConfig.manager.translationsLoadPath) {
+//             appConfig.manager.translationsLoadPath = CONFIG_URL_PREFIX + appConfig.manager.translationsLoadPath;
+//         }
+//     }
 
     orApp.managerConfig = appConfig.manager;
 
