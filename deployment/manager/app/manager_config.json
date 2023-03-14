@@ -22,13 +22,6 @@
       "language" : "en"
     }
   },
-  "markers" : {
-    "LightControllerAsset" : {
-      "attributeName" : "status",
-      "showLabel" : true,
-      "showUnits" : true
-    }
-  },
   "pages" : {
     "assets" : {
       "viewer" : {
@@ -64,21 +57,30 @@
               }
             }, {
               "type" : "info",
-              "title" : "Status",
+              "title" : "Control",
               "properties" : {
                 "include" : [ ]
               },
               "attributes" : {
-                "include" : [ "state", "analogValue", "sunriseTime", "sunsetTime" ]
+                "include" : [ "state", "mode" ]
               }
             }, {
               "type" : "info",
-              "title" : "Settings",
+              "title" : "Light Sensor",
               "properties" : {
                 "include" : [ ]
               },
               "attributes" : {
-                "include" : [ "mode", "analogUpdate", "analogThreshold", "sunriseOffset", "sunsetOffset" ]
+                "include" : [ "analogValue", "analogUpdate", "analogThreshold", "analogThresholdInverted" ]
+              }
+            }, {
+              "type" : "info",
+              "title" : "Schedule",
+              "properties" : {
+                "include" : [ ]
+              },
+              "attributes" : {
+                "include" : [ "sunriseTime", "sunsetTime", "sunriseOffset", "sunsetOffset" ]
               }
             }, {
               "type" : "info",
@@ -96,6 +98,20 @@
               "type" : "linkedUsers",
               "column" : 1
             } ]
+          }
+        }
+      }
+    },
+    "map": {
+      "markers": {
+        "LightControllerAsset": {
+          "attributeName": "state",
+          "showLabel": false,
+          "showUnits": false,
+          "colours": {
+            "type": "boolean",
+            "false": "C0C0C0",
+            "true": "F0F000"
           }
         }
       }

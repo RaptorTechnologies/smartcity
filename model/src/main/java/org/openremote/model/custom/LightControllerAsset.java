@@ -106,8 +106,7 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
             new AttributeDescriptor<>("state",
                     ValueType.BOOLEAN,
                     new MetaItem<>(MetaItemType.READ_ONLY),
-                    new MetaItem<>(MetaItemType.LABEL, "State"))
-                    .withFormat(new ValueFormat().setAsOnOff(false));
+                    new MetaItem<>(MetaItemType.LABEL, "State"));
 
     public static final AttributeDescriptor<Boolean> UPDATE_ANALOG =
             new AttributeDescriptor<>("analogUpdate",
@@ -136,6 +135,11 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
                     .withConstraints(new ValueConstraint.Min(0), new ValueConstraint.Max(24))
                     .withFormat(new ValueFormat().setAsSlider(true));
 
+    public static final AttributeDescriptor<Boolean> ANALOG_THRESHOLD_INVERTED =
+            new AttributeDescriptor<>("analogThresholdInverted",
+                    ValueType.BOOLEAN,
+                    new MetaItem<>(MetaItemType.LABEL, "Analog Threshold Inverted"));
+
     public static final AttributeDescriptor<Date> SUNRISE_TIME =
             new AttributeDescriptor<>("sunriseTime",
                     ValueType.DATE_AND_TIME,
@@ -147,7 +151,7 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
                     ValueType.INTEGER,
                     new MetaItem<>(MetaItemType.LABEL, "Sunrise Offset"))
                     .withUnits(UNITS_MINUTE)
-                    .withConstraints(new ValueConstraint.Min(-60), new ValueConstraint.Max(60))
+                    .withConstraints(new ValueConstraint.Min(0), new ValueConstraint.Max(60))
                     .withFormat(new ValueFormat().setAsSlider(true));
 
     public static final AttributeDescriptor<Date> SUNSET_TIME =
@@ -161,13 +165,11 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
                     ValueType.INTEGER,
                     new MetaItem<>(MetaItemType.LABEL, "Sunset Offset"))
                     .withUnits(UNITS_MINUTE)
-                    .withConstraints(new ValueConstraint.Min(-60), new ValueConstraint.Max(60))
+                    .withConstraints(new ValueConstraint.Min(-60), new ValueConstraint.Max(0))
                     .withFormat(new ValueFormat().setAsSlider(true));
 
-
-
     public static final AssetDescriptor<LightControllerAsset> LIGHT_CONTROLLER_ASSET_DESCRIPTOR =
-            new AssetDescriptor<>("lightbulb", "0000aa", LightControllerAsset.class);
+            new AssetDescriptor<>("lightbulb", "142232", LightControllerAsset.class);
 
 //    public Optional<Boolean> getOnOff() {
 //        return getAttributes().getValue(UPDATE_ANALOG);
