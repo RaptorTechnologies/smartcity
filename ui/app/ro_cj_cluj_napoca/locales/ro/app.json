@@ -1,6 +1,6 @@
 {
   "appTitle": "Sistemul de Iluminat Public",
-  "Status": "Status",
-  "Settings": "Setari",
+  "Schedule": "Orar",
+  "Light Sensor": "Senzor de lumina",
   "Controller Information": "Informatii Controller"
 }

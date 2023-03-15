@@ -64,7 +64,8 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
     public static final AttributeDescriptor<ModeValueType> MODE_VALUE_TYPE_ATTRIBUTE_DESCRIPTOR =
             new AttributeDescriptor<>("mode",
                     MODE_VALUE_TYPE_VALUE_DESCRIPTOR,
-                    new MetaItem<>(MetaItemType.LABEL, "Controller Mode"));
+                    new MetaItem<>(MetaItemType.LABEL, "Controller Mode"),
+                    new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true));
 
     public static final AttributeDescriptor<String> IMEI =
             new AttributeDescriptor<>("imei",
@@ -106,12 +107,13 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
             new AttributeDescriptor<>("state",
                     ValueType.BOOLEAN,
                     new MetaItem<>(MetaItemType.READ_ONLY),
-                    new MetaItem<>(MetaItemType.LABEL, "State"));
+                    new MetaItem<>(MetaItemType.LABEL, "State"),
+                    new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true));
 
     public static final AttributeDescriptor<Boolean> UPDATE_ANALOG =
-            new AttributeDescriptor<>("analogUpdate",
+            new AttributeDescriptor<>("lightSensorUpdateVoltage",
                     ValueType.BOOLEAN,
-                    new MetaItem<>(MetaItemType.LABEL, "Update Analog Value"),
+                    new MetaItem<>(MetaItemType.LABEL, "Update Voltage"),
                     new MetaItem<>(MetaItemType.BUTTON_ICON, "refresh"))
                     .withFormat(new ValueFormat().setAsMomentary(true));
 
@@ -121,24 +123,32 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
 //                    new MetaItem<>(MetaItemType.LABEL, "Set Analog Parent"));
 
     public static final AttributeDescriptor<Double> ANALOG_VALUE =
-            new AttributeDescriptor<>("analogValue",
+            new AttributeDescriptor<>("lightSensorVoltage",
                     ValueType.NUMBER,
                     new MetaItem<>(MetaItemType.READ_ONLY),
-                    new MetaItem<>(MetaItemType.LABEL, "Analog Value"))
+                    new MetaItem<>(MetaItemType.LABEL, "Sensor Voltage"))
                     .withUnits(UNITS_VOLT);
 
     public static final AttributeDescriptor<Double> ANALOG_THRESHOLD =
-            new AttributeDescriptor<>("analogThreshold",
+            new AttributeDescriptor<>("lightSensorThreshold",
                     ValueType.NUMBER,
-                    new MetaItem<>(MetaItemType.LABEL, "Set Analog Threshold"))
+                    new MetaItem<>(MetaItemType.LABEL, "Set Threshold"))
                     .withUnits(UNITS_VOLT)
                     .withConstraints(new ValueConstraint.Min(0), new ValueConstraint.Max(24))
                     .withFormat(new ValueFormat().setAsSlider(true));
 
     public static final AttributeDescriptor<Boolean> ANALOG_THRESHOLD_INVERTED =
-            new AttributeDescriptor<>("analogThresholdInverted",
+            new AttributeDescriptor<>("lightSensorThresholdInverted",
                     ValueType.BOOLEAN,
-                    new MetaItem<>(MetaItemType.LABEL, "Analog Threshold Inverted"));
+                    new MetaItem<>(MetaItemType.LABEL, "Threshold Inverted"));
+
+    public static final AttributeDescriptor<Integer> LIGHT_SENSOR_TRIGGER_OFFSET =
+            new AttributeDescriptor<>("lightSensorTriggerOffset",
+                    ValueType.INTEGER,
+                    new MetaItem<>(MetaItemType.LABEL, "Trigger Offset"))
+                    .withUnits(UNITS_MINUTE)
+                    .withConstraints(new ValueConstraint.Min(0), new ValueConstraint.Max(60))
+                    .withFormat(new ValueFormat().setAsSlider(true));
 
     public static final AttributeDescriptor<Date> SUNRISE_TIME =
             new AttributeDescriptor<>("sunriseTime",
@@ -165,7 +175,7 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
                     ValueType.INTEGER,
                     new MetaItem<>(MetaItemType.LABEL, "Sunset Offset"))
                     .withUnits(UNITS_MINUTE)
-                    .withConstraints(new ValueConstraint.Min(-60), new ValueConstraint.Max(0))
+                    .withConstraints(new ValueConstraint.Min(0), new ValueConstraint.Max(60))
                     .withFormat(new ValueFormat().setAsSlider(true));
 
     public static final AssetDescriptor<LightControllerAsset> LIGHT_CONTROLLER_ASSET_DESCRIPTOR =

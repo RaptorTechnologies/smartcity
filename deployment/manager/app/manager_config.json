@@ -33,15 +33,6 @@
               "title" : "underlyingAssets"
             }, {
               "type" : "info",
-              "hideOnMobile" : true,
-              "properties" : {
-                "include" : [ ]
-              },
-              "attributes" : {
-                "include" : [ "notes" ]
-              }
-            }, {
-              "type" : "info",
               "column" : 1,
               "title" : "location",
               "properties" : {
@@ -71,7 +62,7 @@
                 "include" : [ ]
               },
               "attributes" : {
-                "include" : [ "analogValue", "analogUpdate", "analogThreshold", "analogThresholdInverted" ]
+                "include" : [ "lightSensorVoltage", "lightSensorUpdateVoltage", "lightSensorThreshold", "lightSensorThresholdInverted", "lightSensorTriggerOffset" ]
               }
             }, {
               "type" : "info",
@@ -92,12 +83,43 @@
                 "include" : [ "imei", "macAddress", "ipAddress", "serialNr", "osVersion", "appVersion" ]
               }
             }, {
+                "type" : "info",
+                "hideOnMobile" : true,
+                "properties" : {
+                  "include" : [ ]
+                },
+                "attributes" : {
+                  "include" : [ "notes" ]
+                }
+              },
+              {
               "type" : "history",
               "column" : 1
-            }, {
+              },
+              {
               "type" : "linkedUsers",
               "column" : 1
-            } ]
+              }
+            ]
+          }
+        },
+        "historyConfig": {
+          "table": {
+            "attributeNames": {
+              "optimiseTarget": {
+                "columns": [
+                  {
+                    "header": "Optimise target",
+                    "type": "prop",
+                    "path": "$."
+                  },
+                  {
+                    "header": "Timestamp",
+                    "type": "timestamp"
+                  }
+                ]
+              }
+            }
           }
         }
       }
