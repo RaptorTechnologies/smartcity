@@ -19,6 +19,7 @@
  */
 package org.openremote.model.custom;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.openremote.model.asset.Asset;
 import org.openremote.model.asset.AssetDescriptor;
 import org.openremote.model.attribute.MetaItem;
@@ -64,8 +65,8 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
     public static final AttributeDescriptor<ModeValueType> MODE_VALUE_TYPE_ATTRIBUTE_DESCRIPTOR =
             new AttributeDescriptor<>("mode",
                     MODE_VALUE_TYPE_VALUE_DESCRIPTOR,
-                    new MetaItem<>(MetaItemType.LABEL, "Controller Mode"),
-                    new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true));
+                    new MetaItem<>(MetaItemType.LABEL, "Controller Mode"));
+//                    new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true)
 
     public static final AttributeDescriptor<String> IMEI =
             new AttributeDescriptor<>("imei",
@@ -108,6 +109,13 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
                     ValueType.BOOLEAN,
                     new MetaItem<>(MetaItemType.READ_ONLY),
                     new MetaItem<>(MetaItemType.LABEL, "State"),
+                    new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true));
+
+    public static final AttributeDescriptor<ObjectNode> STATUS =
+            new AttributeDescriptor<>("status",
+                    ValueType.JSON_OBJECT,
+                    new MetaItem<>(MetaItemType.READ_ONLY),
+                    new MetaItem<>(MetaItemType.LABEL, "Status"),
                     new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true));
 
     public static final AttributeDescriptor<Boolean> UPDATE_ANALOG =
