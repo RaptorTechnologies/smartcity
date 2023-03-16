@@ -62,7 +62,7 @@
                 "include" : [ ]
               },
               "attributes" : {
-                "include" : [ "lightSensorVoltage", "lightSensorUpdateVoltage", "lightSensorThreshold", "lightSensorThresholdInverted", "lightSensorTriggerOffset" ]
+                "include" : [ "lightSensorVoltage", "lightSensorUpdateVoltage", "lightSensorThreshold", "lightSensorThresholdInverted", "lightSensorTriggerOffset", "lightSensorMaster" ]
               }
             }, {
               "type" : "info",

@@ -117,10 +117,10 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
                     new MetaItem<>(MetaItemType.BUTTON_ICON, "refresh"))
                     .withFormat(new ValueFormat().setAsMomentary(true));
 
-//    public static final AttributeDescriptor<String> ANALOG_PARENT =
-//            new AttributeDescriptor<>("analogParent",
-//                    ValueType.ASSET_ID,
-//                    new MetaItem<>(MetaItemType.LABEL, "Set Analog Parent"));
+    public static final AttributeDescriptor<String> LIGHT_SENSOR_MASTER =
+            new AttributeDescriptor<>("lightSensorMaster",
+                    ValueType.ASSET_ID,
+                    new MetaItem<>(MetaItemType.LABEL, "Sensor Master"));
 
     public static final AttributeDescriptor<Double> ANALOG_VALUE =
             new AttributeDescriptor<>("lightSensorVoltage",
