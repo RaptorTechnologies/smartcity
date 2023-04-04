@@ -19,13 +19,14 @@
  */
 package org.openremote.model.custom;
 
+import com.fasterxml.jackson.databind.node.BaseJsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.openremote.model.asset.Asset;
 import org.openremote.model.asset.AssetDescriptor;
 import org.openremote.model.attribute.MetaItem;
 import org.openremote.model.value.*;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 import java.util.Date;
 import java.util.Optional;
 
@@ -111,9 +112,9 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
                     new MetaItem<>(MetaItemType.LABEL, "State"),
                     new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true));
 
-    public static final AttributeDescriptor<ObjectNode> STATUS =
+    public static final AttributeDescriptor<BaseJsonNode> STATUS =
             new AttributeDescriptor<>("status",
-                    ValueType.JSON_OBJECT,
+                    ValueType.JSON,
                     new MetaItem<>(MetaItemType.READ_ONLY),
                     new MetaItem<>(MetaItemType.LABEL, "Status"),
                     new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true));
@@ -162,7 +163,8 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
             new AttributeDescriptor<>("sunriseTime",
                     ValueType.DATE_AND_TIME,
                     new MetaItem<>(MetaItemType.READ_ONLY),
-                    new MetaItem<>(MetaItemType.LABEL, "Sunrise Time"));
+                    new MetaItem<>(MetaItemType.LABEL, "Sunrise Time"))
+                    .withFormat(new ValueFormat().setAsDate(true).setMomentJsFormat("DD-MMM-YYYY hh:mm A"));
 
     public static final AttributeDescriptor<Integer> SUNRISE_OFFSET =
             new AttributeDescriptor<>("sunriseOffset",
@@ -176,7 +178,8 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
             new AttributeDescriptor<>("sunsetTime",
                     ValueType.DATE_AND_TIME,
                     new MetaItem<>(MetaItemType.READ_ONLY),
-                    new MetaItem<>(MetaItemType.LABEL, "Sunset Time"));
+                    new MetaItem<>(MetaItemType.LABEL, "Sunset Time"))
+                    .withFormat(new ValueFormat().setAsDate(true).setMomentJsFormat("DD-MMM-YYYY hh:mm A"));
 
     public static final AttributeDescriptor<Integer> SUNSET_OFFSET =
             new AttributeDescriptor<>("sunsetOffset",

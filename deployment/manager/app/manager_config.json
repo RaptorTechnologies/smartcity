@@ -53,7 +53,7 @@
                 "include" : [ ]
               },
               "attributes" : {
-                "include" : [ "state", "mode" ]
+                "include" : [ "state", "mode", "status" ]
               }
             }, {
               "type" : "info",
