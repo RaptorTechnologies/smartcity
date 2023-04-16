@@ -23,6 +23,7 @@ import com.fasterxml.jackson.databind.node.BaseJsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.openremote.model.asset.Asset;
 import org.openremote.model.asset.AssetDescriptor;
+import org.openremote.model.attribute.Attribute;
 import org.openremote.model.attribute.MetaItem;
 import org.openremote.model.value.*;
 
@@ -66,8 +67,8 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
     public static final AttributeDescriptor<ModeValueType> MODE_VALUE_TYPE_ATTRIBUTE_DESCRIPTOR =
             new AttributeDescriptor<>("mode",
                     MODE_VALUE_TYPE_VALUE_DESCRIPTOR,
-                    new MetaItem<>(MetaItemType.LABEL, "Controller Mode"));
-//                    new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true)
+                    new MetaItem<>(MetaItemType.LABEL, "Controller Mode"),
+                    new MetaItem<>(MetaItemType.STORE_DATA_POINTS, true));
 
     public static final AttributeDescriptor<String> IMEI =
             new AttributeDescriptor<>("imei",
@@ -188,6 +189,26 @@ public class LightControllerAsset extends Asset<LightControllerAsset> {
                     .withUnits(UNITS_MINUTE)
                     .withConstraints(new ValueConstraint.Min(0), new ValueConstraint.Max(60))
                     .withFormat(new ValueFormat().setAsSlider(true));
+
+    public static final AttributeDescriptor<String> PLC_DISPLAY =
+            new AttributeDescriptor<>("plcDisplay",
+                    ValueType.TEXT,
+                    new MetaItem<>(MetaItemType.READ_ONLY),
+                    new MetaItem<>(MetaItemType.MULTILINE),
+                    new MetaItem<>(MetaItemType.LABEL, "PLC Alpha 2 Display"));
+
+    public static final AttributeDescriptor<Date> PLC_RTC =
+            new AttributeDescriptor<>("plcRtc",
+                    ValueType.DATE_AND_TIME,
+                    new MetaItem<>(MetaItemType.LABEL, "PLC Alpha 2 RTC"))
+                    .withFormat(new ValueFormat().setAsDate(true).setMomentJsFormat("DD-MMM-YYYY hh:mm A"));
+
+    public static final AttributeDescriptor<Boolean> PLC_UPDATE =
+            new AttributeDescriptor<>("plcUpdate",
+                    ValueType.BOOLEAN,
+                    new MetaItem<>(MetaItemType.LABEL, "Update PLC Alpha 2 Information"),
+                    new MetaItem<>(MetaItemType.BUTTON_ICON, "refresh"))
+                    .withFormat(new ValueFormat().setAsMomentary(true));
 
     public static final AssetDescriptor<LightControllerAsset> LIGHT_CONTROLLER_ASSET_DESCRIPTOR =
             new AssetDescriptor<>("lightbulb", "142232", LightControllerAsset.class);

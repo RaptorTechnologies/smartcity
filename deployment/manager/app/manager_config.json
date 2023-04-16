@@ -75,6 +75,15 @@
               }
             }, {
               "type" : "info",
+              "title" : "PLC Mitsubishi Alpha 2",
+              "properties" : {
+                "include" : [ ]
+              },
+              "attributes" : {
+                "include" : [ "plcDisplay", "plcRtc", "plcUpdate" ]
+              }
+            }, {
+              "type" : "info",
               "title" : "Controller Information",
               "properties" : {
                 "include" : [ ]
